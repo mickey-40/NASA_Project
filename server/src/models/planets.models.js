@@ -19,7 +19,7 @@ function loadPlanetsData() {
       }))
       .on('data', (data) => {
           if(isHabitablePlanet(data)){
-              habitablePlanet.push(data);
+            habitablePlanets.push(data);
           }
           
       })
@@ -31,7 +31,7 @@ function loadPlanetsData() {
           // console.log(habitablePlanet.map((planet) => {
           //     return planet['kepler_name']
           // }))
-          // console.log(`${habitablePlanet.length} habitable planets!`)
+          console.log(`${habitablePlanets.length} habitable planets!`)
           resolve();
     });
   });
@@ -44,5 +44,5 @@ function getAllPlanets() {
 
     module.exports = {
       loadPlanetsData,
-      getAllPlanets,
+      planets : getAllPlanets(),
     };
